@@ -1,0 +1,64 @@
+﻿@model lab_5.Models.ViewModels.DealsViewModel
+@{
+    ViewData["Title"] = "Food Delivery Services";
+}
+
+<h1>Food Delivery Services</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Reg #</th>
+            <th>Title</th>
+            <th>Fee</th>
+            <th>Subscribers</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model.FoodDeliveryServices)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.Title</td>
+                <td>@s.Fee.ToString("C")</td>
+                <td>@(s.Subscriptions?.Count ?? 0)</td>
+                <td>
+                    <a asp-action="Index" asp-route-id="@s.Id">View Customers</a> |
+                    <a asp-action="Edit" asp-route-id="@s.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@s.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@s.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!string.IsNullOrEmpty(Model.SelectedServiceId))
+{
+    <h2 style="margin-top:20px;">Customers subscribed to @Model.SelectedServiceId</h2>
+    if (!Model.Customers.Any())
+    {
+        <p>No subscribers.</p>
+    }
+    else
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Birth Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model.Customers)
+                {
+                    <tr>
+                        <td>@c.FullName</td>
+                        <td>@c.BirthDate.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
