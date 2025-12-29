@@ -1,4 +1,4 @@
-\# C# Application Project
+# C# Application Project
 
 
 
@@ -8,7 +8,7 @@ It demonstrates structured application design, clean code practices, and practic
 
 
 
-\## Highlights
+## Highlights
 
 \- C# / .NET project (academic)
 
@@ -18,7 +18,7 @@ It demonstrates structured application design, clean code practices, and practic
 
 
 
-\## Technologies
+## Technologies
 
 \- C#
 
@@ -28,7 +28,7 @@ It demonstrates structured application design, clean code practices, and practic
 
 
 
-\## How to Run
+## How to Run
 
 1\. Open the solution/project in Visual Studio.
 
@@ -38,7 +38,7 @@ It demonstrates structured application design, clean code practices, and practic
 
 
 
-\## Academic Context
+## Academic Context
 
 This project was completed as part of my academic studies and is shared here for portfolio and learning purposes.
 
